@@ -29,3 +29,7 @@ C:\Users\HAIHA\Documents\GitHub\battleship03cs\obj\x86\Debug-Windows\MyGameWin.c
 C:\Users\HAIHA\Documents\GitHub\battleship03cs\obj\x86\Debug-Windows\MyGameWin.csproj.CoreCompileInputs.cache
 C:\Users\HAIHA\Documents\GitHub\battleship03cs\obj\x86\Debug-Windows\MyGame.exe
 C:\Users\HAIHA\Documents\GitHub\battleship03cs\obj\x86\Debug-Windows\MyGame.pdb
+C:\Users\lache\Documents\SWEDevTools\C#Battleship\battleship03cs\obj\x86\Debug-Windows\MyGameWin.csprojAssemblyReference.cache
+C:\Users\lache\Documents\SWEDevTools\C#Battleship\battleship03cs\obj\x86\Debug-Windows\MyGameWin.csproj.CoreCompileInputs.cache
+C:\Users\lache\Documents\SWEDevTools\C#Battleship\battleship03cs\obj\x86\Debug-Windows\MyGame.exe
+C:\Users\lache\Documents\SWEDevTools\C#Battleship\battleship03cs\obj\x86\Debug-Windows\MyGame.pdb

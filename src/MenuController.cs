@@ -102,7 +102,7 @@ static class MenuController
     ///     ''' <returns>false if a clicked missed the buttons. This can be used to check prior menus.</returns>
     private static bool HandleMenuInput(int menu, int level, int xOffset)
     {
-        if (SwinGame.KeyTyped(KeyCode.VK_ESCAPE))
+        if (SwinGame.KeyTyped(KeyCode.EscapeKey))
         {
             EndCurrentState();
             return true;
@@ -203,7 +203,7 @@ static class MenuController
             toDraw.Y = btnTop + TEXT_OFFSET;
             toDraw.Width = BUTTON_WIDTH;
             toDraw.Height = BUTTON_HEIGHT;
-            SwinGame.DrawTextLines(_menuStructure[menu](i), MENU_COLOR, Color.Black, GameFont("Menu"), FontAlignment.AlignCenter, toDraw);
+            SwinGame.DrawText(_menuStructure[menu](i), MENU_COLOR, Color.Black, GameFont("Menu"), FontAlignment.AlignCenter, toDraw);
 
             if (SwinGame.MouseDown(MouseButton.LeftButton) & IsMouseOverMenu(i, level, xOffset))
                 SwinGame.DrawRectangle(HIGHLIGHT_COLOR, btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT);
