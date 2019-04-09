@@ -21,26 +21,26 @@ using SwinGameSDK;
 /// ''' </summary>
 static class DeploymentController
 {
-    private const static int SHIPS_TOP = 98;
-    private const static int SHIPS_LEFT = 20;
-    private const static int SHIPS_HEIGHT = 90;
-    private const static int SHIPS_WIDTH = 300;
+    private static int SHIPS_TOP = 98;
+    private static int SHIPS_LEFT = 20;
+    private static int SHIPS_HEIGHT = 90;
+    private static int SHIPS_WIDTH = 300;
 
-    private const static int TOP_BUTTONS_TOP = 72;
-    private const static int TOP_BUTTONS_HEIGHT = 46;
+    private static int TOP_BUTTONS_TOP = 72;
+    private static int TOP_BUTTONS_HEIGHT = 46;
 
-    private const static int PLAY_BUTTON_LEFT = 693;
-    private const static int PLAY_BUTTON_WIDTH = 80;
+    private static int PLAY_BUTTON_LEFT = 693;
+    private static int PLAY_BUTTON_WIDTH = 80;
 
-    private const static int UP_DOWN_BUTTON_LEFT = 410;
-    private const static int LEFT_RIGHT_BUTTON_LEFT = 350;
+    private static int UP_DOWN_BUTTON_LEFT = 410;
+    private static int LEFT_RIGHT_BUTTON_LEFT = 350;
 
-    private const static int RANDOM_BUTTON_LEFT = 547;
-    private const static int RANDOM_BUTTON_WIDTH = 51;
+    private static int RANDOM_BUTTON_LEFT = 547;
+    private static int RANDOM_BUTTON_WIDTH = 51;
 
-    private const static int DIR_BUTTONS_WIDTH = 47;
+    private static int DIR_BUTTONS_WIDTH = 47;
 
-    private const static int TEXT_OFFSET = 5;
+    private static int TEXT_OFFSET = 5;
 
     private static Direction _currentDirection = Direction.UpDown;
     private static ShipName _selectedShip = ShipName.Tug;

@@ -1,3 +1,5 @@
+using SwinGameSDK;
+using static SwinGameSDK.SwinGame;
 static class GameLogic
 {
     public static void Main()
