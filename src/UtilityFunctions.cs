@@ -29,7 +29,7 @@ static class UtilityFunctions
     public const int CELL_HEIGHT = 40;
     public const int CELL_GAP = 2;
 
-    public int SHIP_GAP = 3;
+    public static int SHIP_GAP = 3;
 
     private readonly static Color SMALL_SEA = SwinGame.RGBAColor(6, 60, 94, 255);
     private readonly static Color SMALL_SHIP = Color.Gray;
@@ -134,7 +134,7 @@ static class UtilityFunctions
             {
                 colLeft = left + (cellGap + cellWidth) * col;
 
-                Color fillColor;
+                Color fillColor = Color.Blue;
                 bool draw;
 
                 draw = true;

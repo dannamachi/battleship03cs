@@ -30,6 +30,7 @@ public static class GameController
     private static Stack<GameState> _state = new Stack<GameState>();
 
     private static AIOption _aiSetting;
+    private static string _message;
 
     /// <summary>
     ///     ''' Returns the current state of the game, indicating which screen is
@@ -71,7 +72,7 @@ public static class GameController
         }
     }
 
-    public static GameController()
+    static GameController()
     {
         // bottom state will be quitting. If player exits main menu then the game is over
         _state.Push(GameState.Quitting);
@@ -97,13 +98,13 @@ public static class GameController
         // create the players
         switch (_aiSetting)
         {
-            case object _ when AIOption.Medium:
+            case AIOption.Medium:
                 {
                     _ai = new AIMediumPlayer(_theGame);
                     break;
                 }
 
-            case object _ when AIOption.Hard:
+            case AIOption.Hard:
                 {
                     _ai = new AIHardPlayer(_theGame);
                     break;
@@ -151,21 +152,21 @@ public static class GameController
     private static void PlayHitSequence(int row, int column, bool showAnimation)
     {
         if (showAnimation)
-            AddExplosion(row, column);
+            UtilityFunctions.AddExplosion(row, column);
 
-        Audio.PlaySoundEffect(GameSound("Hit"));
+        Audio.PlaySoundEffect(GameResources.GameSound("Hit"));
 
-        DrawAnimationSequence();
+        UtilityFunctions.DrawAnimationSequence();
     }
 
     private static void PlayMissSequence(int row, int column, bool showAnimation)
     {
         if (showAnimation)
-            AddSplash(row, column);
+            UtilityFunctions.AddSplash(row, column);
 
-        Audio.PlaySoundEffect(GameSound("Miss"));
+        Audio.PlaySoundEffect(GameResources.GameSound("Miss"));
 
-        DrawAnimationSequence();
+        UtilityFunctions.DrawAnimationSequence();
     }
 
     /// <summary>
@@ -180,54 +181,55 @@ public static class GameController
     {
         bool isHuman;
         isHuman = _theGame.Player == HumanPlayer;
+        string message;
 
         if (isHuman)
-            Message = "You " + result.ToString();
+            _message = "You " + result.ToString();
         else
-            Message = "The AI " + result.ToString();
+            _message = "The AI " + result.ToString();
 
         switch (result.Value)
         {
-            case object _ when ResultOfAttack.Destroyed:
+            case ResultOfAttack.Destroyed:
                 {
                     PlayHitSequence(result.Row, result.Column, isHuman);
-                    Audio.PlaySoundEffect(GameSound("Sink"));
+                    Audio.PlaySoundEffect(GameResources.GameSound("Sink"));
                     break;
                 }
 
-            case object _ when ResultOfAttack.GameOver:
+            case ResultOfAttack.GameOver:
                 {
                     PlayHitSequence(result.Row, result.Column, isHuman);
-                    Audio.PlaySoundEffect(GameSound("Sink"));
+                    Audio.PlaySoundEffect(GameResources.GameSound("Sink"));
 
-                    while (Audio.SoundEffectPlaying(GameSound("Sink")))
+                    while (Audio.SoundEffectPlaying(GameResources.GameSound("Sink")))
                     {
                         SwinGame.Delay(10);
                         SwinGame.RefreshScreen();
                     }
 
                     if (HumanPlayer.IsDestroyed)
-                        Audio.PlaySoundEffect(GameSound("Lose"));
+                        Audio.PlaySoundEffect(GameResources.GameSound("Lose"));
                     else
-                        Audio.PlaySoundEffect(GameSound("Winner"));
+                        Audio.PlaySoundEffect(GameResources.GameSound("Winner"));
                     break;
                 }
 
-            case object _ when ResultOfAttack.Hit:
+            case ResultOfAttack.Hit:
                 {
                     PlayHitSequence(result.Row, result.Column, isHuman);
                     break;
                 }
 
-            case object _ when ResultOfAttack.Miss:
+            case ResultOfAttack.Miss:
                 {
                     PlayMissSequence(result.Row, result.Column, isHuman);
                     break;
                 }
 
-            case object _ when ResultOfAttack.ShotAlready:
+            case ResultOfAttack.ShotAlready:
                 {
-                    Audio.PlaySoundEffect(GameSound("Error"));
+                    Audio.PlaySoundEffect(GameResources.GameSound("Error"));
                     break;
                 }
         }
@@ -290,14 +292,14 @@ public static class GameController
     {
         switch (result.Value)
         {
-            case object _ when ResultOfAttack.Miss:
+            case ResultOfAttack.Miss:
                 {
                     if (_theGame.Player == ComputerPlayer)
                         AIAttack();
                     break;
                 }
 
-            case object _ when ResultOfAttack.GameOver:
+            case ResultOfAttack.GameOver:
                 {
                     SwitchState(GameState.EndingGame);
                     break;
@@ -320,50 +322,50 @@ public static class GameController
 
         switch (CurrentState)
         {
-            case object _ when GameState.ViewingMainMenu:
+            case GameState.ViewingMainMenu:
                 {
-                    HandleMainMenuInput();
+                    MenuController.HandleMainMenuInput();
                     break;
                 }
 
-            case object _ when GameState.ViewingGameMenu:
+            case GameState.ViewingGameMenu:
                 {
-                    HandleGameMenuInput();
+                    MenuController.HandleGameMenuInput();
                     break;
                 }
 
-            case object _ when GameState.AlteringSettings:
+            case GameState.AlteringSettings:
                 {
-                    HandleSetupMenuInput();
+                    MenuController.HandleSetupMenuInput();
                     break;
                 }
 
-            case object _ when GameState.Deploying:
+            case GameState.Deploying:
                 {
-                    HandleDeploymentInput();
+                    DeploymentController.HandleDeploymentInput();
                     break;
                 }
 
-            case object _ when GameState.Discovering:
+            case GameState.Discovering:
                 {
-                    HandleDiscoveryInput();
+                    DiscoveryController.HandleDiscoveryInput();
                     break;
                 }
 
-            case object _ when GameState.EndingGame:
+            case GameState.EndingGame:
                 {
-                    HandleEndOfGameInput();
+                    EndingGameController.HandleEndOfGameInput();
                     break;
                 }
 
-            case object _ when GameState.ViewingHighScores:
+            case GameState.ViewingHighScores:
                 {
-                    HandleHighScoreInput();
+                    HighScoreController.HandleHighScoreInput();
                     break;
                 }
         }
 
-        UpdateAnimations();
+        UtilityFunctions.UpdateAnimations();
     }
 
     /// <summary>
@@ -374,54 +376,54 @@ public static class GameController
     ///     ''' </remarks>
     public static void DrawScreen()
     {
-        DrawBackground();
+        UtilityFunctions.DrawBackground();
 
         switch (CurrentState)
         {
-            case object _ when GameState.ViewingMainMenu:
+            case GameState.ViewingMainMenu:
                 {
-                    DrawMainMenu();
+                    MenuController.DrawMainMenu();
                     break;
                 }
 
-            case object _ when GameState.ViewingGameMenu:
+            case GameState.ViewingGameMenu:
                 {
-                    DrawGameMenu();
+                    MenuController.DrawGameMenu();
                     break;
                 }
 
-            case object _ when GameState.AlteringSettings:
+            case GameState.AlteringSettings:
                 {
-                    DrawSettings();
+                    MenuController.DrawSettings();
                     break;
                 }
 
-            case object _ when GameState.Deploying:
+            case GameState.Deploying:
                 {
-                    DrawDeployment();
+                    DeploymentController.DrawDeployment();
                     break;
                 }
 
-            case object _ when GameState.Discovering:
+            case GameState.Discovering:
                 {
-                    DrawDiscovery();
+                    DiscoveryController.DrawDiscovery();
                     break;
                 }
 
-            case object _ when GameState.EndingGame:
+            case GameState.EndingGame:
                 {
-                    DrawEndOfGame();
+                    EndingGameController.DrawEndOfGame();
                     break;
                 }
 
-            case object _ when GameState.ViewingHighScores:
+            case GameState.ViewingHighScores:
                 {
-                    DrawHighScores();
+                    HighScoreController.DrawHighScores();
                     break;
                 }
         }
 
-        DrawAnimations();
+        UtilityFunctions.DrawAnimations();
 
         SwinGame.RefreshScreen();
     }
@@ -434,7 +436,7 @@ public static class GameController
     public static void AddNewState(GameState state)
     {
         _state.Push(state);
-        Message = "";
+        _message = "";
     }
 
     /// <summary>
