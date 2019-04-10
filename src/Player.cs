@@ -124,15 +124,13 @@ public class Player
     //     ''' <value>The ship</value>
     //     ''' <returns>The ship with the indicated name</returns>
     //     ''' <remarks>The none ship returns nothing/null</remarks>
-    public Ship Ship
+    public Ship Ship (ShipName name)
     {
-        get
-        {
             if (name == ShipName.None)
                 return null/* TODO Change to default(_) if this is not a reference type */;
 
-            return _Ships.Item[name];
-        }
+            return _Ships[name];
+        
     }
 
     // <summary>
