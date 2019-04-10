@@ -1,7 +1,7 @@
-/// <summary>
-/// ''' Player has its own _PlayerGrid, and can see an _EnemyGrid, it can also check if
-/// ''' all ships are deployed and if all ships are detroyed. A Player can also attach.
-/// ''' </summary>
+// <summary>
+// ''' Player has its own _PlayerGrid, and can see an _EnemyGrid, it can also check if
+// ''' all ships are deployed and if all ships are detroyed. A Player can also attach.
+// ''' </summary>
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -233,8 +233,8 @@ public class Player : IEnumerable<Ship>
 
         switch (result.Value)
         {
-            case object _ when ResultOfAttack.Destroyed:
-            case object _ when ResultOfAttack.Hit:
+            case  ResultOfAttack.Destroyed:
+            case  ResultOfAttack.Hit:
                 {
                     _hits += 1;
                     break;

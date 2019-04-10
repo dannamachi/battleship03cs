@@ -48,7 +48,32 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\GameMain.cs" />
+    <Compile Include="src\AIHardPlayer.cs" />
+    <Compile Include="src\AIMediumPlayer.cs" />
+    <Compile Include="src\AIOption.cs" />
+    <Compile Include="src\AIPlayer.cs" />
+    <Compile Include="src\AttackResult.cs" />
+    <Compile Include="src\BattleShipsGame.cs" />
+    <Compile Include="src\DeploymentController.cs" />
+    <Compile Include="src\Direction.cs" />
+    <Compile Include="src\DiscoveryController.cs" />
+    <Compile Include="src\EndingGameController.cs" />
+    <Compile Include="src\GameController.cs" />
+    <Compile Include="src\GameLogic.cs" />
+    <Compile Include="src\GameResources.cs" />
+    <Compile Include="src\GameState.cs" />
+    <Compile Include="src\HighScoreController.cs" />
+    <Compile Include="src\ISeaGrid.cs" />
+    <Compile Include="src\MenuController.cs" />
+    <Compile Include="src\Player.cs" />
+    <Compile Include="src\ResultOfAttack.cs" />
+    <Compile Include="src\SeaGrid.cs" />
+    <Compile Include="src\SeaGridAdapter.cs" />
+    <Compile Include="src\Ship.cs" />
+    <Compile Include="src\ShipName.cs" />
+    <Compile Include="src\Tile.cs" />
+    <Compile Include="src\TileView.cs" />
+    <Compile Include="src\UtilityFunctions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">
@@ -63,6 +88,7 @@
     <None Include="Info.plist">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="src\.DS_Store" />
   </ItemGroup>
   <ItemGroup>
     <NativeReference Include="lib\mac\libSGSDK.dylib">
