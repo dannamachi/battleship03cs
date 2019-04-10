@@ -28,11 +28,11 @@ public class Player
     private int _hits;
     private int _misses;
 
-    /// <summary>
-    ///     ''' Returns the game that the player is part of.
-    ///     ''' </summary>
-    ///     ''' <value>The game</value>
-    ///     ''' <returns>The game that the player is playing</returns>
+    // <summary>
+    //     ''' Returns the game that the player is part of.
+    //     ''' </summary>
+    //     ''' <value>The game</value>
+    //     ''' <returns>The game that the player is playing</returns>
     public BattleShipsGame Game
     {
         get
@@ -117,13 +117,13 @@ public class Player
         }
     }
 
-    /// <summary>
-    ///     ''' Returns the Player's ship with the given name.
-    ///     ''' </summary>
-    ///     ''' <param name="name">the name of the ship to return</param>
-    ///     ''' <value>The ship</value>
-    ///     ''' <returns>The ship with the indicated name</returns>
-    ///     ''' <remarks>The none ship returns nothing/null</remarks>
+    // <summary>
+    //     ''' Returns the Player's ship with the given name.
+    //     ''' </summary>
+    //     ''' <param name="name">the name of the ship to return</param>
+    //     ''' <value>The ship</value>
+    //     ''' <returns>The ship with the indicated name</returns>
+    //     ''' <remarks>The none ship returns nothing/null</remarks>
     public Ship Ship
     {
         get
@@ -135,11 +135,11 @@ public class Player
         }
     }
 
-    /// <summary>
-    ///     ''' The number of shots the player has made
-    ///     ''' </summary>
-    ///     ''' <value>shots taken</value>
-    ///     ''' <returns>teh number of shots taken</returns>
+    // <summary>
+    //     ''' The number of shots the player has made
+    //     ''' </summary>
+    //     ''' <value>shots taken</value>
+    //     ''' <returns>teh number of shots taken</returns>
     public int Shots
     {
         get
@@ -156,11 +156,11 @@ public class Player
         }
     }
 
-    /// <summary>
-    ///     ''' Total number of shots that missed
-    ///     ''' </summary>
-    ///     ''' <value>miss count</value>
-    ///     ''' <returns>the number of shots that have missed ships</returns>
+    // <summary>
+    //     ''' Total number of shots that missed
+    //     ''' </summary>
+    //     ''' <value>miss count</value>
+    //     ''' <returns>the number of shots that have missed ships</returns>
     public int Missed
     {
         get
@@ -180,11 +180,11 @@ public class Player
         }
     }
 
-    /// <summary>
-    ///     ''' Makes it possible to enumerate over the ships the player
-    ///     ''' has.
-    ///     ''' </summary>
-    ///     ''' <returns>A Ship enumerator</returns>
+    // <summary>
+    //     ''' Makes it possible to enumerate over the ships the player
+    //     ''' has.
+    //     ''' </summary>
+    //     ''' <returns>A Ship enumerator</returns>
     public IEnumerator<Ship> GetShipEnumerator()
     {
         Ship[] result = new Ship[_Ships.Values.Count + 1];
@@ -195,11 +195,11 @@ public class Player
         return lst.GetEnumerator();
     }
 
-    /// <summary>
-    ///     ''' Makes it possible to enumerate over the ships the player
-    ///     ''' has.
-    ///     ''' </summary>
-    ///     ''' <returns>A Ship enumerator</returns>
+    // <summary>
+    //     ''' Makes it possible to enumerate over the ships the player
+    //     ''' has.
+    //     ''' </summary>
+    //     ''' <returns>A Ship enumerator</returns>
     public IEnumerator<Ship> GetEnumerator()
     {
         Ship[] result = new Ship[_Ships.Values.Count + 1];
@@ -210,21 +210,21 @@ public class Player
         return lst.GetEnumerator();
     }
 
-    /// <summary>
-    ///     ''' Vitual Attack allows the player to shoot
-    ///     ''' </summary>
+    // <summary>
+    //     ''' Vitual Attack allows the player to shoot
+    //     ''' </summary>
     public virtual AttackResult Attack()
     {
         // human does nothing here...
         return null/* TODO Change to default(_) if this is not a reference type */;
     }
 
-    /// <summary>
-    ///     ''' Shoot at a given row/column
-    ///     ''' </summary>
-    ///     ''' <param name="row">the row to attack</param>
-    ///     ''' <param name="col">the column to attack</param>
-    ///     ''' <returns>the result of the attack</returns>
+    // <summary>
+    //     ''' Shoot at a given row/column
+    //     ''' </summary>
+    //     ''' <param name="row">the row to attack</param>
+    //     ''' <param name="col">the column to attack</param>
+    //     ''' <returns>the result of the attack</returns>
     internal AttackResult Shoot(int row, int col)
     {
         _shots += 1;
