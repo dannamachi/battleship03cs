@@ -155,7 +155,7 @@ public class AIHardPlayer : AIPlayer
                     }
             }
         }
-        while ((row < 0 || column < 0 || row >= EnemyGrid.Height || column >= EnemyGrid.Width || EnemyGrid.Item(row, column) != TileView.Sea)); // while inside the grid and not a sea tile do the search
+        while ((row < 0 || column < 0 || row >= EnemyGrid.Height || column >= EnemyGrid.Width || EnemyGrid.Item != TileView.Sea)); // while inside the grid and not a sea tile do the search
     }
 
     // <summary>
@@ -392,7 +392,7 @@ public class AIHardPlayer : AIPlayer
     // <param name="column">the column of the targets location</param>
     private void AddTarget(int row, int column)
     {
-        if ((row >= 0 && column >= 0 && row < EnemyGrid.Height && column < EnemyGrid.Width && EnemyGrid.Item(row, column) == TileView.Sea))
+        if ((row >= 0 && column >= 0 && row < EnemyGrid.Height && column < EnemyGrid.Width && EnemyGrid.Item == TileView.Sea))
 
             _Targets.Push(new Target(new Location(row, column), _CurrentTarget.ShotAt));
     }
