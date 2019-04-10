@@ -55,6 +55,7 @@ public class SeaGrid : ISeaGrid
 
     public TileView this[int x, int y]
     {
+        
     }
 
 
@@ -181,8 +182,10 @@ public class SeaGrid : ISeaGrid
     // '' <returns>An attackresult (hit, miss, sunk, shotalready)</returns>
     public AttackResult HitTile(int row, int col)
     {
+      
         try
-        {
+        { 
+    
             // tile is already hit
             if (_GameTiles(row, col).Shot)
             {

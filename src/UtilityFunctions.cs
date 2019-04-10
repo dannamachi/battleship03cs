@@ -13,6 +13,7 @@ using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
+
 using SwinGameSDK;
 
 
@@ -211,7 +212,7 @@ static class UtilityFunctions
             }
 
             if (!small)
-                SwinGame.DrawBitmap(GameImage(shipName), colLeft, rowTop);
+                SwinGame.DrawBitmap((shipName), colLeft, rowTop);
             else
             {
                 SwinGame.FillRectangle(SHIP_FILL_COLOR, colLeft, rowTop, shipWidth, shipHeight);
@@ -243,8 +244,10 @@ static class UtilityFunctions
     //     ''' Draws the message to the screen
     //     ''' </summary>
     public static void DrawMessage()
-    {
-        SwinGame.DrawText(Message, MESSAGE_COLOR, GameFont("Courier"), FIELD_LEFT, MESSAGE_TOP);
+    {   
+        Font GameFont = new Font("Courier", 12);
+        SwinGame.DrawText(
+            Message, MESSAGE_COLOR, GameFont, FIELD_LEFT, MESSAGE_TOP);
     }
 
     // <summary>
@@ -259,20 +262,20 @@ static class UtilityFunctions
             case  GameState.AlteringSettings:
             case  GameState.ViewingHighScores:
                 {
-                    SwinGame.DrawBitmap(GameImage("Menu"), 0, 0);
+                    SwinGame.DrawBitmap(("Menu"), 0, 0);
                     break;
                 }
 
-            case object _ when GameState.Discovering:
-            case object _ when GameState.EndingGame:
+            case  GameState.Discovering:
+            case  GameState.EndingGame:
                 {
-                    SwinGame.DrawBitmap(GameImage("Discovery"), 0, 0);
+                    SwinGame.DrawBitmap(("Discovery"), 0, 0);
                     break;
                 }
 
-            case object _ when GameState.Deploying:
+            case GameState.Deploying:
                 {
-                    SwinGame.DrawBitmap(GameImage("Deploy"), 0, 0);
+                    SwinGame.DrawBitmap(("Deploy"), 0, 0);
                     break;
                 }
 
@@ -303,7 +306,7 @@ static class UtilityFunctions
         Sprite s;
         Bitmap imgObj;
 
-        imgObj = GameImage(image);
+        imgObj = (image);
         imgObj.SetCellDetails(40, 40, 3, 3, 7);
 
         AnimationScript animation;
