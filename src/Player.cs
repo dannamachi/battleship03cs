@@ -15,12 +15,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 
-public class Player : IEnumerable<Ship>
+public class Player
 {
     protected static Random _Random = new Random();
 
     private Dictionary<ShipName, Ship> _Ships = new Dictionary<ShipName, Ship>();
-    private SeaGrid _playerGrid = new SeaGrid(_Ships);
+    private SeaGrid _playerGrid = new SeaGrid();
     private ISeaGrid _enemyGrid;
     protected BattleShipsGame _game;
 
