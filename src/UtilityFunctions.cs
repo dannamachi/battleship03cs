@@ -255,7 +255,7 @@ static class UtilityFunctions
     //     ''' </summary>
     public static void DrawBackground()
     {
-        switch (CurrentState)
+        switch (GameController.CurrentState)
         {
             case  GameState.ViewingMainMenu:
             case  GameState.ViewingGameMenu:
@@ -306,7 +306,7 @@ static class UtilityFunctions
         Sprite s;
         Bitmap imgObj;
 
-        imgObj = (image);
+        imgObj = SwinGame.LoadBitmap(image);
         imgObj.SetCellDetails(40, 40, 3, 3, 7);
 
         AnimationScript animation;
@@ -349,7 +349,7 @@ static class UtilityFunctions
         for (i = 1; i <= ANIMATION_CELLS * FRAMES_PER_CELL; i++)
         {
             UpdateAnimations();
-            DrawScreen();
+            GameController.DrawScreen();
         }
     }
 }
