@@ -293,8 +293,8 @@ public static class GameResources
     private static void FreeMusic()
     {
         Music obj;
-        foreach (var obj in _Music.Values)
-            Audio.FreeMusic(obj);
+        foreach (var ob in _Music.Values)
+            Audio.FreeMusic(ob);
     }
 
     public static void FreeResources()
