@@ -326,7 +326,7 @@ static class UtilityFunctions
         foreach (Sprite s in _Animations)
         {
             SwinGame.UpdateSprite(s);
-            if (s.animationHasEnded)
+            if (SpriteAnimationHasEnded (s)) ;
                 ended.Add(s);
         }
 
