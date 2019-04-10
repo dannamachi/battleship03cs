@@ -12,11 +12,10 @@ public class SeaGrid : ISeaGrid
 {
 
     private const int _WIDTH = 10;
-
     private const int _HEIGHT = 10;
 
+    private Tile _GameTiles;
     private Dictionary<ShipName, Ship> _Ships;
-
     private int _ShipsKilled = 0;
 
     // '' <summary>
