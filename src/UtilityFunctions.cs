@@ -140,7 +140,7 @@ static class UtilityFunctions
 
                 draw = true;
 
-                switch (grid.Item)
+                switch (grid.Item(rowTop,colLeft))
                 {
                     case TileView.Ship:
                         {
