@@ -206,7 +206,7 @@ public static class GameResources
         const int BG_Y = 453;
 
         int fullW;
-        Rectangle toDraw;
+        Rectangle toDraw = new Rectangle();
 
         fullW = 260 * number / STEPS;
         SwinGame.DrawBitmap(_LoaderEmpty, BG_X, BG_Y);
@@ -217,7 +217,7 @@ public static class GameResources
         toDraw.Y = TY;
         toDraw.Width = TW;
         toDraw.Height = TH;
-        SwinGame.DrawTextLines(message, Color.White, Color.Transparent, _LoadingFont, FontAlignment.AlignCenter, toDraw);
+        SwinGame.DrawText(message, Color.White, Color.Transparent, _LoadingFont, FontAlignment.AlignCenter, toDraw);
         // SwinGame.DrawTextLines(message, Color.White, Color.Transparent, _LoadingFont, FontAlignment.AlignCenter, TX, TY, TW, TH)
 
         SwinGame.RefreshScreen();
@@ -272,7 +272,7 @@ public static class GameResources
     private static void FreeFonts()
     {
         Font obj;
-        foreach (var ob in _Fonts.Value)
+        foreach (var ob in _Fonts.Values)
             SwinGame.FreeFont(ob);
     }
 
