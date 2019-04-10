@@ -1,14 +1,14 @@
 ﻿<Properties StartupConfiguration="{871B5A90-103A-46A5-BBB9-07C02B9851D1}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="src/GameResources.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/Player.cs">
     <Files>
-      <File FileName="src/UtilityFunctions.cs" Line="259" Column="10" />
-      <File FileName="src/Player.cs" Line="23" Column="49" />
-      <File FileName="src/SeaGridAdapter.cs" Line="52" Column="10" />
-      <File FileName="src/SeaGrid.cs" Line="57" Column="6" />
+      <File FileName="src/UtilityFunctions.cs" Line="329" Column="28" />
+      <File FileName="src/Player.cs" Line="39" Column="10" />
+      <File FileName="src/SeaGridAdapter.cs" Line="53" Column="25" />
+      <File FileName="src/SeaGrid.cs" Line="60" Column="5" />
       <File FileName="src/TileView.cs" Line="1" Column="1" />
       <File FileName="src/Tile.cs" Line="1" Column="2" />
-      <File FileName="src/AIHardPlayer.cs" Line="212" Column="44" />
-      <File FileName="src/GameResources.cs" Line="275" Column="22" />
+      <File FileName="src/AIHardPlayer.cs" Line="393" Column="48" />
+      <File FileName="src/GameResources.cs" Line="49" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.MyGameMac PreferredExecutionTarget="Test1" />
