@@ -15,6 +15,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 
+using SwinGameSDK;
+
 public abstract class AIPlayer : Player
 {
 
@@ -133,7 +135,7 @@ public abstract class AIPlayer : Player
             result = _game.Shoot(row, column);
             ProcessShot(row, column, result);
         }
-        while (result.Value != ResultOfAttack.Miss && result.Value != ResultOfAttack.GameOver && !SwinGame.WindowCloseRequested)// generate coordinates for shot// take shot
+        while (result.Value != ResultOfAttack.Miss && result.Value != ResultOfAttack.GameOver && !SwinGame.WindowCloseRequested())// generate coordinates for shot// take shot
 ;
 
         return result;
@@ -148,7 +150,7 @@ public abstract class AIPlayer : Player
         for (i = 0; i <= 150; i++)
         {
             // Dont delay if window is closed
-            if (SwinGame.WindowCloseRequested)
+            if (SwinGame.WindowCloseRequested())
                 return;
 
             SwinGame.Delay(5);
