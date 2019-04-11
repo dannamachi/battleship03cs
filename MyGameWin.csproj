@@ -71,6 +71,7 @@
       <HintPath>lib\SwinGame.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
