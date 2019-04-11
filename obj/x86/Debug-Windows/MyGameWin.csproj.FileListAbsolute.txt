@@ -92,3 +92,7 @@ C:\Users\HAIHA\Documents\GitHub\battleship03cs\bin\Debug\Resources\sounds\sink.w
 C:\Users\HAIHA\Documents\GitHub\battleship03cs\bin\Debug\Resources\sounds\SwinGameStart.ogg
 C:\Users\HAIHA\Documents\GitHub\battleship03cs\bin\Debug\Resources\sounds\watershot.wav
 C:\Users\HAIHA\Documents\GitHub\battleship03cs\bin\Debug\Resources\sounds\winner.wav
+C:\Users\HAIHA\Desktop\Customer 181567\BA-CS\Sem2\Dev\Model\obj\x86\Debug-Windows\MyGameWin.csprojAssemblyReference.cache
+C:\Users\HAIHA\Desktop\Customer 181567\BA-CS\Sem2\Dev\Model\obj\x86\Debug-Windows\MyGameWin.csproj.CoreCompileInputs.cache
+C:\Users\HAIHA\Desktop\Customer 181567\BA-CS\Sem2\Dev\Model\obj\x86\Debug-Windows\MyGame.exe
+C:\Users\HAIHA\Desktop\Customer 181567\BA-CS\Sem2\Dev\Model\obj\x86\Debug-Windows\MyGame.pdb
