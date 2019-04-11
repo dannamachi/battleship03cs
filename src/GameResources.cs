@@ -235,7 +235,7 @@ public static class GameResources
         SwinGame.FreeBitmap(_Animation);
         SwinGame.FreeBitmap(_LoaderEmpty);
         SwinGame.FreeBitmap(_LoaderFull);
-        Audio.FreeSoundEffect(_StartSound);
+        //Audio.FreeSoundEffect(_StartSound);
         SwinGame.ChangeScreenSize(width, height);
     }
 
