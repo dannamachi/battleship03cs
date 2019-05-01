@@ -20,6 +20,8 @@ public class Player : IEnumerable<Ship>
 	protected BattleShipsGame _game;
 	private int _shots;
 	private int _hits;
+    private int _consec;
+    private int _multiplier;
 
 	private int _misses;
 	/// <summary>
@@ -125,7 +127,8 @@ public class Player : IEnumerable<Ship>
 			if (IsDestroyed) {
 				return 0;
 			} else {
-				return (Hits * 12) - Shots - (PlayerGrid.ShipsKilled * 20);
+                //Added consecutive hits.
+				return ((Hits - _multiplier) * 12) + (_multiplier * 12 * 4) - Shots - (PlayerGrid.ShipsKilled * 20);
 			}
 		}
 	}
@@ -189,9 +192,15 @@ public class Player : IEnumerable<Ship>
 			case ResultOfAttack.Destroyed:
 			case ResultOfAttack.Hit:
 				_hits += 1;
+                _consec += 1;
+                if (_consec > 1)
+                {
+                    _multiplier += 1;
+                }
 				break;
 			case ResultOfAttack.Miss:
 				_misses += 1;
+                _consec = 0;
 				break;
 		}
 

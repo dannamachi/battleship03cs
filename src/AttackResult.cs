@@ -13,8 +13,8 @@ public class AttackResult
 	private ResultOfAttack _Value;
 	private Ship _Ship;
 	private string _Text;
-	private int _Row;
 
+	private int _Row;
 	private int _Column;
 	/// <summary>
 	/// The result of the attack
