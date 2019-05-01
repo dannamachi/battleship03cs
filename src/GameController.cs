@@ -29,6 +29,9 @@ public static class GameController
 	/// </summary>
 	/// <value>The current state</value>
 	/// <returns>The current state</returns>
+    
+    public static Timer GameTimer { get => _gameTimer; }
+
 	public static GameState CurrentState {
 		get { return _state.Peek(); }
 	}
@@ -340,15 +343,6 @@ public static class GameController
 		}
 
 		UtilityFunctions.DrawAnimations();
-
-        if (CurrentState == GameState.Discovering)
-        {
-            string timerText = (_gameTimer.Ticks / 1000).ToString();
-            Point2D timerPos = new Point2D();
-            timerPos.X = 750;
-            timerPos.Y = 30;
-            SwinGame.DrawText(timerText, Color.Red, timerPos);
-        }
 
 		SwinGame.RefreshScreen();
 	}

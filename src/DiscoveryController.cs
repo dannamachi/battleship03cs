@@ -75,6 +75,12 @@ static class DiscoveryController
 		SwinGame.DrawText(GameController.HumanPlayer.Shots.ToString(), Color.White, GameResources.GameFont("Menu"), SCORES_LEFT, SHOTS_TOP);
 		SwinGame.DrawText(GameController.HumanPlayer.Hits.ToString(), Color.White, GameResources.GameFont("Menu"), SCORES_LEFT, HITS_TOP);
 		SwinGame.DrawText(GameController.HumanPlayer.Missed.ToString(), Color.White, GameResources.GameFont("Menu"), SCORES_LEFT, SPLASH_TOP);
-	}
+
+        string timerText = (GameController.GameTimer.Ticks / 1000).ToString();
+        Point2D timerPos = new Point2D();
+        timerPos.X = 750;
+        timerPos.Y = 30;
+        SwinGame.DrawText(timerText, Color.Red, timerPos);
+    }
 
 }
