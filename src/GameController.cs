@@ -14,7 +14,7 @@ using SwinGameSDK;
 /// </summary>
 public static class GameController
 {
-
+    private static Timer _gameTimer;
 	private static BattleShipsGame _theGame;
 	private static Player _human;
 
@@ -29,6 +29,9 @@ public static class GameController
 	/// </summary>
 	/// <value>The current state</value>
 	/// <returns>The current state</returns>
+    
+    public static Timer GameTimer { get => _gameTimer; }
+
 	public static GameState CurrentState {
 		get { return _state.Peek(); }
 	}
@@ -94,6 +97,9 @@ public static class GameController
 		_theGame.AttackCompleted += AttackCompleted;
 
 		AddNewState(GameState.Deploying);
+
+        //add and start timer
+        _gameTimer = SwinGame.CreateTimer();
 	}
 
 	/// <summary>
@@ -105,6 +111,7 @@ public static class GameController
 		//RemoveHandler _human.PlayerGrid.Changed, AddressOf GridChanged
 		_ai.PlayerGrid.Changed -= GridChanged;
 		_theGame.AttackCompleted -= AttackCompleted;
+        _gameTimer.Stop();
 	}
 
 	/// <summary>
@@ -209,6 +216,7 @@ public static class GameController
 		_theGame.AddDeployedPlayer(_ai);
 
 		SwitchState(GameState.Discovering);
+        _gameTimer.Start();
 	}
 
 	/// <summary>
