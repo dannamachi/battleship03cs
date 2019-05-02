@@ -21,7 +21,7 @@ public class Player : IEnumerable<Ship>
 	private int _shots;
 	private int _hits;
     private int _consec;
-    private int _multiplier;
+    private int _truehits;
 
 	private int _misses;
 	/// <summary>
@@ -128,7 +128,7 @@ public class Player : IEnumerable<Ship>
 				return 0;
 			} else {
                 //Added consecutive hits.
-				return ((Hits - _multiplier) * 12) + (_multiplier * 12 * 4) - Shots - (PlayerGrid.ShipsKilled * 20);
+				return (_truehits * 12) - Shots - (PlayerGrid.ShipsKilled * 20);
 			}
 		}
 	}
@@ -193,10 +193,7 @@ public class Player : IEnumerable<Ship>
 			case ResultOfAttack.Hit:
 				_hits += 1;
                 _consec += 1;
-                if (_consec > 1)
-                {
-                    _multiplier += 1;
-                }
+                _truehits += _consec;
 				break;
 			case ResultOfAttack.Miss:
 				_misses += 1;
