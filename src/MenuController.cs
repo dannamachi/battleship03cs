@@ -37,14 +37,17 @@ static class MenuController
 		new string[] {
 			"EASY",
 			"MEDIUM",
-			"HARD"
+			"HARD",
+            "CHANGE THEME"
+            //// THEME EXTENSION: Added "Change Theme"
 		}
 
 	};
 	private const int MENU_TOP = 575;
 	private const int MENU_LEFT = 30;
 	private const int MENU_GAP = 0;
-	private const int BUTTON_WIDTH = 75;
+	private const int BUTTON_WIDTH = 95;
+    //// THEME EXTENSION: Change button width 
 	private const int BUTTON_HEIGHT = 15;
 	private const int BUTTON_SEP = BUTTON_WIDTH + MENU_GAP;
 
@@ -61,8 +64,10 @@ static class MenuController
 	private const int SETUP_MENU_EASY_BUTTON = 0;
 	private const int SETUP_MENU_MEDIUM_BUTTON = 1;
 	private const int SETUP_MENU_HARD_BUTTON = 2;
+    private const int SETUP_MENU_THEME_BUTTON = 3;
+    //// THEME EXTENSION: Added Theme menu button to the list by changing menu exit button and adding the theme button
 
-	private const int SETUP_MENU_EXIT_BUTTON = 3;
+	private const int SETUP_MENU_EXIT_BUTTON = 4;
 	private const int GAME_MENU_RETURN_BUTTON = 0;
 	private const int GAME_MENU_SURRENDER_BUTTON = 1;
 
@@ -282,6 +287,7 @@ static class MenuController
 	/// </summary>
 	/// <param name="button">the button pressed</param>
 	private static void PerformSetupMenuAction(int button)
+        ////
 	{
 		switch (button) {
 			case SETUP_MENU_EASY_BUTTON:
@@ -293,6 +299,9 @@ static class MenuController
 			case SETUP_MENU_HARD_BUTTON:
 				GameController.SetDifficulty(AIOption.Hard);
 				break;
+            case SETUP_MENU_THEME_BUTTON:
+                GameController.SwitchTheme();
+                break;
 		}
 		//Always end state - handles exit button as well
 		GameController.EndCurrentState();
