@@ -181,6 +181,55 @@
     <WinLibraryFiles Include="lib\win\swingame.rc" />
     <WinLibraryFiles Include="lib\win\zlib1.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\images\deploy.jpg" />
+    <Content Include="Resources\images\deploy2.jpg" />
+    <Content Include="Resources\images\deploy_button_hl.png" />
+    <Content Include="Resources\images\deploy_button_hl2.png" />
+    <Content Include="Resources\images\deploy_dir_button_horiz.png" />
+    <Content Include="Resources\images\deploy_dir_button_horiz2.png" />
+    <Content Include="Resources\images\deploy_dir_button_vert.png" />
+    <Content Include="Resources\images\deploy_dir_button_vert2.png" />
+    <Content Include="Resources\images\deploy_play_button.png" />
+    <Content Include="Resources\images\deploy_play_button2.png" />
+    <Content Include="Resources\images\deploy_randomize_button.png" />
+    <Content Include="Resources\images\deploy_randomize_button2.png" />
+    <Content Include="Resources\images\discover.jpg" />
+    <Content Include="Resources\images\discover2.jpg" />
+    <Content Include="Resources\images\explosion.png" />
+    <Content Include="Resources\images\explosion2.png" />
+    <Content Include="Resources\images\highscores.txt" />
+    <Content Include="Resources\images\loader_empty.png" />
+    <Content Include="Resources\images\loader_empty2.png" />
+    <Content Include="Resources\images\loader_full.png" />
+    <Content Include="Resources\images\loader_full2.png" />
+    <Content Include="Resources\images\main_page.jpg" />
+    <Content Include="Resources\images\main_page2.jpg" />
+    <Content Include="Resources\images\ship_deploy_horiz_1.png" />
+    <Content Include="Resources\images\ship_deploy_horiz_2.png" />
+    <Content Include="Resources\images\ship_deploy_horiz_21.png" />
+    <Content Include="Resources\images\ship_deploy_horiz_22.png" />
+    <Content Include="Resources\images\ship_deploy_horiz_23.png" />
+    <Content Include="Resources\images\ship_deploy_horiz_24.png" />
+    <Content Include="Resources\images\ship_deploy_horiz_25.png" />
+    <Content Include="Resources\images\ship_deploy_horiz_3.png" />
+    <Content Include="Resources\images\ship_deploy_horiz_4.png" />
+    <Content Include="Resources\images\ship_deploy_horiz_5.png" />
+    <Content Include="Resources\images\ship_deploy_vert_1.png" />
+    <Content Include="Resources\images\ship_deploy_vert_2.png" />
+    <Content Include="Resources\images\ship_deploy_vert_21.png" />
+    <Content Include="Resources\images\ship_deploy_vert_22.png" />
+    <Content Include="Resources\images\ship_deploy_vert_23.png" />
+    <Content Include="Resources\images\ship_deploy_vert_24.png" />
+    <Content Include="Resources\images\ship_deploy_vert_25.png" />
+    <Content Include="Resources\images\ship_deploy_vert_3.png" />
+    <Content Include="Resources\images\ship_deploy_vert_4.png" />
+    <Content Include="Resources\images\ship_deploy_vert_5.png" />
+    <Content Include="Resources\images\splash.png" />
+    <Content Include="Resources\images\splash2.png" />
+    <Content Include="Resources\images\SplashBack.png" />
+    <Content Include="Resources\theme.txt" />
+  </ItemGroup>
   <Target Name="CopyFiles">
     <Copy SourceFiles="@(MacLibraryFiles)" DestinationFolder="$(OutDir)" />
     <Copy SourceFiles="@(WinLibraryFiles)" DestinationFolder="$(OutDir)" />
