@@ -61,7 +61,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup />
   <ItemGroup>
     <Compile Include="src\AIHardPlayer.cs" />
     <Compile Include="src\AIMediumPlayer.cs" />

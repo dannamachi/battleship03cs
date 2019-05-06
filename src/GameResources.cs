@@ -9,40 +9,86 @@ using SwinGameSDK;
 
 public static class GameResources
 {
+    public static int ImageVar = Convert.ToInt32(System.IO.File.ReadAllText(SwinGame.PathToResource("theme.txt")));
 
-	private static void LoadFonts()
+    private static void LoadFonts()
+    {
+        NewFont("ArialLarge", "arial.ttf", 80);
+        NewFont("Courier", "cour.ttf", 14);
+        NewFont("CourierSmall", "cour.ttf", 8);
+        NewFont("Menu", "ffaccess.ttf", 8);
+    }
+
+    public static void VaryImages()
+    {
+
+        if (ImageVar == 0)
+        {
+            ImageVar = 1;
+            System.IO.File.WriteAllText(SwinGame.PathToResource("theme.txt"), "1");
+        }
+        else
+        {
+            ImageVar = 0;
+            System.IO.File.WriteAllText(SwinGame.PathToResource("theme.txt"), "0");
+        }
+    }
+
+    private static void LoadImages()
 	{
-		NewFont("ArialLarge", "arial.ttf", 80);
-		NewFont("Courier", "cour.ttf", 14);
-		NewFont("CourierSmall", "cour.ttf", 8);
-		NewFont("Menu", "ffaccess.ttf", 8);
-	}
+        ////Images for original theme
+        if (ImageVar == 0)
+        {
+            //Backgrounds
+            NewImage("Menu", "main_page.jpg");
+            NewImage("Discovery", "discover.jpg");
+            NewImage("Deploy", "deploy.jpg");
 
-	private static void LoadImages()
-	{
-		//Backgrounds
-		NewImage("Menu", "main_page.jpg");
-		NewImage("Discovery", "discover.jpg");
-		NewImage("Deploy", "deploy.jpg");
+            //Deployment
+            NewImage("LeftRightButton", "deploy_dir_button_horiz.png");
+            NewImage("UpDownButton", "deploy_dir_button_vert.png");
+            NewImage("SelectedShip", "deploy_button_hl.png");
+            NewImage("PlayButton", "deploy_play_button.png");
+            NewImage("RandomButton", "deploy_randomize_button.png");
 
-		//Deployment
-		NewImage("LeftRightButton", "deploy_dir_button_horiz.png");
-		NewImage("UpDownButton", "deploy_dir_button_vert.png");
-		NewImage("SelectedShip", "deploy_button_hl.png");
-		NewImage("PlayButton", "deploy_play_button.png");
-		NewImage("RandomButton", "deploy_randomize_button.png");
+            //Ships
+            int i = 0;
+            for (i = 1; i <= 5; i++)
+            {
+                NewImage("ShipLR" + i, "ship_deploy_horiz_" + i + ".png");
+                NewImage("ShipUD" + i, "ship_deploy_vert_" + i + ".png");
+            }
 
-		//Ships
-		int i = 0;
-		for (i = 1; i <= 5; i++) {
-			NewImage("ShipLR" + i, "ship_deploy_horiz_" + i + ".png");
-			NewImage("ShipUD" + i, "ship_deploy_vert_" + i + ".png");
-		}
+            //Explosions
+            NewImage("Explosion", "explosion.png");
+            NewImage("Splash", "splash.png");
+        }
+        ////Other Images for alternate theme
+        if (ImageVar == 1)
+        {
+            NewImage("Menu", "main_page2.jpg");
+            NewImage("Discovery", "discover2.jpg");
+            NewImage("Deploy", "deploy2.jpg");
 
-		//Explosions
-		NewImage("Explosion", "explosion.png");
-		NewImage("Splash", "splash.png");
+            //Deployment
+            NewImage("LeftRightButton", "deploy_dir_button_horiz2.png");
+            NewImage("UpDownButton", "deploy_dir_button_vert2.png");
+            NewImage("SelectedShip", "deploy_button_hl2.png");
+            NewImage("PlayButton", "deploy_play_button2.png");
+            NewImage("RandomButton", "deploy_randomize_button2.png");
 
+            //Ships
+            int i = 0;
+            for (i = 1; i <= 5; i++)
+            {
+                NewImage("ShipLR" + i, "ship_deploy_horiz_2" + i + ".png");
+                NewImage("ShipUD" + i, "ship_deploy_vert_2" + i + ".png");
+            }
+
+            //Explosions
+            NewImage("Explosion", "explosion2.png");
+            NewImage("Splash", "splash2.png");
+        }
 	}
 
 	private static void LoadSounds()

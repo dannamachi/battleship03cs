@@ -218,6 +218,12 @@ public static class GameController
 		SwitchState(GameState.Discovering);
         _gameTimer.Start();
 	}
+    
+    //// THEME CHANGE EXTENSION: method to change the theme
+    public static void SwitchTheme()
+    {
+        GameResources.VaryImages();
+    }
 
 	/// <summary>
 	/// Gets the player to attack the indicated row and column.
